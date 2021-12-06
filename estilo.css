@@ -5,12 +5,8 @@
 
 body {
   background-color: #fff;
-  font-family: "Verdana";
+  font-family: "Verdana", sans-serif;
   margin: 0;
-}
-
-h1{
-  font-family: "Ravie";
 }
 
 strong {
@@ -47,13 +43,16 @@ strong {
   margin-left: auto;
   margin-right: auto;
   display: grid;
+  grid-template-columns: min-content 1fr;
+  grid-template-rows: 100px 1fr auto;
   min-height: 100vh;
+  width: 800px;
 }
 
 #cabecalho-pagina {
   grid-row: 1 / 3;
   grid-column: 2 / 2;
-  position: sticky;
+  position: relative;
 }
 
 #lateral {
@@ -76,7 +75,7 @@ strong {
 
 /* EXERCÍCIO 3: cabeçalho da página */
 #cabecalho-pagina {
-  
+  padding: 10px 10px 10px 0px;
 }
 
 #cabecalho-pagina h1 {
@@ -84,6 +83,8 @@ strong {
   font-size: 36px;
   color: #e90c0c;
   font-weight: normal;
+  text-align: center;
+  font-family: "Ravie", sans-serif;
 }
 
 #cabecalho-pagina h2 {
@@ -91,35 +92,66 @@ strong {
   font-size: 24px;
   color: #333;
   font-weight: normal;
+  text-align: right;
 }
 
 /* EXERCÍCIO 4: cada item do menu */
 article {
+  padding: 20px 0px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
 
 
 /* EXERCÍCIO 5: o rodapé */
 #rodape-pagina {
+  display: flex;
+  justify-content: flex-end;
+  margin: 46px 25px 15px 0px;
+
 }
 
 /* EXERCÍCIO 6: lateral */
 #lateral {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  
 }
 
 
 /* EXERCÍCIO 7: o ticket */
 #ticket {
+  position: absolute;
+  top: calc(50% + 200px);
+  left: -84px;
+  transition: left 200ms linear;
 }
 
 #ticket:hover {
+  left: 0px;
 }
 
 
 /* EXERCÍCIO 8: deslocamento no siri e peixe */
 #siri {
+  position: relative;
+  height: 150px;
+  width: 150px;
+  top: 17px;
+  margin-left: -10px;
 }
 
 #peixe {
+  height: 150px;
+  width: 130px;
+  margin: -44px;
+}
+
+#bolhas {
+  height: 150px;
+  width: 150px;
 }
 
 /* EXERCÍCIO 9: bolhas - no HTML e no JS */

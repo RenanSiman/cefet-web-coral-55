@@ -3,6 +3,15 @@
 @import url("fonts/ravie.css");
 @import url("fonts/verdana.css");
 
+:root {
+  --cor-recipiente: #d3d3d3;
+  --cor-texto: #333;
+  --cor-cabecalho: #e90c0c;
+  --cor-forte: #d027aa;
+  --cor-fundo:  linear-gradient(to bottom, #f6f1b2, #4599b2 80%);
+  --cor-cardapio-fundo: rgba(255, 255, 255, 0.2)
+}
+
 body {
   background-color: #fff;
   font-family: "Verdana", sans-serif;
@@ -10,17 +19,17 @@ body {
 }
 
 strong {
-  color: #d027aa;
+  color: var(--cor-forte);
 }
 
 #recipiente {
-  background-image: linear-gradient(to bottom, #f6f1b2, #4599b2 80%);
-  border-left: 1px solid #d3d3d3;
-  border-right: 1px solid #d3d3d3;
+  background-image: var(--cor-fundo);
+  border-left: 1px solid var(--cor-recipiente);
+  border-right: 1px solid var(--cor-recipiente);
 }
 
 #cardapio {
-  background-color: rgba(255, 255, 255, 0.2);
+  background-color: var(--cor-cardapio-fundo);
   border-top: 1px solid #aac0ae;
   border-bottom: 1px solid #aac0ae;
   border-left: 1px solid #aac0ae;
@@ -28,15 +37,14 @@ strong {
 
 #cardapio h3 {
   font-size: 18px;
-  color: #333;
+  color: var(--cor-texto);
   margin-top: 30px;
 }
 
 #cardapio article {
   font-size: 14px;
-  color: #333;
+  color: var(--cor-texto);
 }
-
 
 /* EXERCÍCIO 2: layout da página */
 #recipiente {
@@ -71,8 +79,6 @@ strong {
   grid-column: 2 / 2;
 }
 
-
-
 /* EXERCÍCIO 3: cabeçalho da página */
 #cabecalho-pagina {
   padding: 10px 10px 10px 0px;
@@ -81,7 +87,7 @@ strong {
 #cabecalho-pagina h1 {
   margin: 0;
   font-size: 36px;
-  color: #e90c0c;
+  color: var(--cor-cabecalho);
   font-weight: normal;
   text-align: center;
   font-family: "Ravie", sans-serif;
@@ -90,26 +96,24 @@ strong {
 #cabecalho-pagina h2 {
   margin: 0;
   font-size: 24px;
-  color: #333;
+  color: var(--cor-texto);
   font-weight: normal;
   text-align: right;
 }
 
 /* EXERCÍCIO 4: cada item do menu */
 article {
-  padding: 20px 0px;
+  padding: 20px 10px;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
 }
-
 
 /* EXERCÍCIO 5: o rodapé */
 #rodape-pagina {
   display: flex;
   justify-content: flex-end;
   margin: 46px 25px 15px 0px;
-
 }
 
 /* EXERCÍCIO 6: lateral */
@@ -117,9 +121,7 @@ article {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  
 }
-
 
 /* EXERCÍCIO 7: o ticket */
 #ticket {
@@ -132,7 +134,6 @@ article {
 #ticket:hover {
   left: 0px;
 }
-
 
 /* EXERCÍCIO 8: deslocamento no siri e peixe */
 #siri {
@@ -157,10 +158,19 @@ article {
 /* EXERCÍCIO 9: bolhas - no HTML e no JS */
 /* --- */
 
-
 /* EXERCÍCIO 10: modo escuro */
 /* no início deste arquivo (depois dos @import), coloque
    as custom properties */
 /* coloque aqui a media query para sobrescrever o valor
    das custom properties para o modo escuro */
 
+@media (prefers-color-scheme: dark) {
+  :root {
+    --cor-recipiente: #5a5a5a;
+    --cor-texto: rgb(180, 180, 180);
+    --cor-cabecalho: #cc5d5d;
+    --cor-forte: #d027aa;
+    --cor-fundo: linear-gradient(0deg, rgba(23,40,92,1) 0%, rgba(25,67,101,1) 30%, rgba(39,73,136,1) 68%, rgba(63,96,111,1) 100%);
+    --cor-cardapio-fundo: rgba(23, 40, 92, 0.2)
+  }
+}
